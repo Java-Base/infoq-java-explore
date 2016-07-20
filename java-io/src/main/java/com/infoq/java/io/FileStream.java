@@ -27,6 +27,9 @@ public class FileStream {
 		while ((b = input.read()) != -1) {
 			System.out.println(b);
 		}
+
+		// 遵循谁打开谁关闭的原则
+		input.close();
 	}
 
 	public static void fileOutputWrite(String filename) throws IOException {
@@ -38,6 +41,8 @@ public class FileStream {
 
 		String str = "廉新忠";
 		out.write(str.getBytes());
+
+		out.close();
 	}
 
 	public static void main(String[] args) throws IOException {
